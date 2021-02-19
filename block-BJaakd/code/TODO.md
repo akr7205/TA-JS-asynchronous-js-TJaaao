@@ -1,0 +1,2 @@
+- Create a fucntion named `fetch` which can accept one parameter a `url` and returns a promise. When the promise is resolved we can access the information coming from the URL.
+- Refactor the the image search app you created (in previous exercise) to use the function `fetch` you crated above.
