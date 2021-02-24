@@ -1,3 +1,5 @@
+## XMLHttpRequest + Promise
+
 - Create a fucntion named `fetch` which can accept one parameter an `url` and returns a promise.
 - Use `XMLHttpRequest` to make a network request.
 - When the data is loaded resolve the promise
