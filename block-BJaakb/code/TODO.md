@@ -10,7 +10,7 @@
 // Your code
 ```
 
-3. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch` and also use `.finally` to log messgae `Promise Settled!`.
+3. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch` and also use `.finally` to log message `Promise Settled!`.
 
 ```js
 // Your code
@@ -38,4 +38,4 @@ Set `secondPromise` to be a promise that resolves to "Second!". Set `firstPromis
 // Your code goes here
 ```
 
-6. Write a funtion named `wait` that accepts `time` in ms and executes the function after the given time.
+6. Write a function named `wait` that accepts `time` in ms and executes the function after the given time.
