@@ -1,9 +1,8 @@
-### Domain Names Search App
+### Update News App
 
-- Create a website where you can search for the list of registered domain names.
-- It will contain an input field when you can enter a word/phrase to search
-- The search term will contain any words or phrases
-- Use this API (https://api.domainsdb.info/v1/)
-- Make sure to show loading indicator when you are fetching the data
-- Make sure to handle the offline, response not ok error
+You have to update the News App we created in the previous exercise. Get the code from previous exercise. And make the following changes.
+
+- Show a loading indicator when you are fetching the data
+- Handle the browser being offline
+- Handle if the response is not ok. Throw error and display a friendly message
 - Use `.finally` to remove the loading indicator
