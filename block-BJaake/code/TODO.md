@@ -1,9 +1,14 @@
-# Github User Finder
+# Spaceflight News App
 
-Your app will have the following features (user fetch to get data):
+- Create a new search website using the api link given below
+- Display all latest news in the start
+- Each news should contain image, title, source and read more button
+- Clicking on read me should take the user to the news url
+- It will also contain a dropdown with multiple news sources (`newsSite` property from the news object)
+- Selecting any specific news source will display news from that specific source only.
 
-- A input box where you can type the username of any user in the world and press `enter`
-- Your app internally will interact with `github` api at `https://api.github.com/user/{username}`
-- Get the data of the user and display it on the page.
-- Along with the basic information also fetch the info of followers and following users.
-- Display the information of 5 followers and 5 following (username, image, number of followers and following)
+- Use browser function `fetch` to get data
+
+## API Details:
+
+- `https://test.spaceflightnewsapi.net/api/v2/articles?_limit=30`
