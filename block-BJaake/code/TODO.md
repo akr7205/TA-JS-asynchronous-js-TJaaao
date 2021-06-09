@@ -1,4 +1,4 @@
-# Spaceflight News App
+## Spaceflight News App
 
 - Create a new search website using the api link given below
 - Display all latest news in the start
@@ -11,4 +11,10 @@
 
 ## API Details:
 
-- `https://test.spaceflightnewsapi.net/api/v2/articles?_limit=30`
+- `https://api.spaceflightnewsapi.net/v3/articles?_limit=30`
+
+For more information you can check [Spaceflight News API](https://spaceflightnewsapi.net/) website.
+
+## DEMO
+
+![Spaceflight News App](https://github.com/nnnkit/ac-js-images/blob/master/async/spaceflight.gif?raw=true)
