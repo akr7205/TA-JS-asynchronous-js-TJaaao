@@ -8,7 +8,7 @@ Your app will do the following:
 - Display the user information like profile picture, username, number of followers and following etc
 - Display the first five following/followers user (show image, username)
 
-- API: https://api.github.com/user/{username}
+- API: https://api.github.com/users/{username}
 - Followers List: https://api.github.com/users/{username}/followers
 - Following List: https://api.github.com/users/{username}/following
 
