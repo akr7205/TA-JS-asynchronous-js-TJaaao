@@ -6,6 +6,10 @@ Create the execution context diagram of the following code. Also write the outpu
 console.log('First');
 setTimeout(() => console.log('Second'), 0);
 console.log('Third');
+
+first;
+Third;
+second;
 ```
 
 2.
@@ -18,6 +22,11 @@ function secondCall() {
 setTimeout(secondCall, 2000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0); // execute this code after 1000 ms
 console.log('Third');
+
+First;
+Third;
+Third;
+Second;
 ```
 
 3.
