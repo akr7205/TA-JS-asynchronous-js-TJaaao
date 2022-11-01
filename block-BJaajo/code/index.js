@@ -23,3 +23,11 @@ function asyncForEach(arr, cb) {
 console.log('one');
 asyncForEach([1, 2, 3], (num) => console.log(num));
 console.log('three');
+
+// 9.
+
+console.log('First Call');
+setTimeout(function () {
+  [1, 2, 3, 4, 5].forEach((num) => console.log(num));
+}, 2000);
+console.log('Last Call');
