@@ -1,0 +1,359 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+
+  padding-bottom: 3rem;
+  background-color: #f1deb8;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid rgb(229, 229, 229);
+  color: rgb(117, 119, 126);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+time {
+  font-family: 'Karla', sans-serif;
+}
+
+/* css color variable */
+:root {
+  --primary-color: rgb(35, 41, 70);
+  --bg-color: rgb(223, 236, 255);
+  --dark-text: rgb(2, 5, 17);
+  --light-text: rgb(115, 115, 119);
+  --secondary-color: rgb(249, 35, 77);
+  --btn-color: rgb(249, 35, 77);
+  --footer-colr: rgb(172, 176, 195);
+}
+
+/* General */
+html {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  /* color: #fff; */
+}
+
+.container {
+  /* max-width: 1330px; */
+  /* max-width: 1280px; */
+  max-width: 1120px;
+  margin: 0 auto;
+  /* padding: 0 5rem; */
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.item-start {
+  align-items: flex-start;
+}
+
+.flex-inline {
+  display: flex;
+  align-items: center;
+}
+
+.item-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FLEX COLUMNS */
+.flex-60 {
+  flex: 0 1 60%;
+}
+
+.flex-50 {
+  flex: 0 1 50%;
+}
+
+.flex-48 {
+  flex: 0 1 48%;
+}
+
+.flex-46 {
+  flex: 0 1 46%;
+}
+
+.flex-40 {
+  flex: 0 1 40%;
+}
+
+.flex-30 {
+  flex: 0 1 30%;
+}
+
+.flex-28 {
+  flex: 0 1 28%;
+}
+
+.flex-25 {
+  flex: 0 1 25%;
+}
+
+.flex-23 {
+  flex: 0 1 23%;
+}
+
+.flex-20 {
+  flex: 0 1 20%;
+}
+
+.flex-15 {
+  flex: 0 1 15%;
+}
+
+.grow {
+  flex: 1 1 auto;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.padding {
+  padding: 1rem 0;
+}
+
+.margin {
+  margin: 1.5rem 0;
+}
+
+.font-0 {
+  font-size: 0;
+}
+
+.full-width {
+  width: 100%;
+  object-fit: cover;
+}
+
+.active {
+  color: var(--secondary-color) !important;
+}
+img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+h1 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+h4 {
+  margin-bottom: 1rem;
+}
+.profile-container {
+  /* background-color: #f1deb8; */
+}
+.input-container {
+  text-align: center;
+  padding: 1rem;
+}
+.input-field {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.user-profile {
+  margin-bottom: 1rem;
+}
+.profile-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image-wrapper {
+  margin-bottom: 2rem;
+}
+.image-wrapper .heading {
+  margin-right: 2rem;
+  font-size: 1.3rem;
+}
+.image-container img {
+  margin-right: 1rem;
+}
+
+.following-container {
+}
+
+/* cat  */
+h2 {
+  text-align: center;
+  letter-spacing: 0.3rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.cat-image {
+  margin-bottom: 1rem;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 0;
+}
+.random-btn {
+  cursor: pointer;
+}
