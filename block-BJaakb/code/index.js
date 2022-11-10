@@ -6,6 +6,8 @@ function fetch(keywordImages) {
       'GET',
       `https://api.unsplash.com/search/photos?page=1&query=${keywordImages}&client_id=rMHUhpKrqqDAqUigRDz9o4mKgVCw8q1cofnCd3zLldY`
     );
+    xhr.send();
+
     xhr.onload = () => {
       return resolve(JSON.parse(xhr.response));
     };
@@ -13,7 +15,6 @@ function fetch(keywordImages) {
     xhr.onerror = () => {
       return reject('something went wrong');
     };
-    xhr.send();
   });
 }
 
@@ -45,7 +46,8 @@ function createUI(data) {
 input.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     let input = e.target.value;
-    let data = fetch(e.target.value).then((data) => {
+    let data = fetch(input).then((data) => {
+      console.log(data);
       createUI(data.results);
     });
 
