@@ -1,8 +1,10 @@
 let input = document.querySelector('.user-input');
 let root = document.querySelector('.news-wrapper');
 let newsinput = document.getElementById('useroption');
-
+let donut = document.querySelector('.donut-container');
 let userInput = 'SpaceNews';
+let main = document.querySelector('main');
+let errormsg = document.querySelector('.error-msg');
 
 newsinput.addEventListener('change', (e) => {
   userInput = e.target.value;
@@ -11,26 +13,48 @@ newsinput.addEventListener('change', (e) => {
 
   gettingData();
 });
+function handelErrormsg(msg) {
+  main.style.display = 'none';
+  errormsg.style.display = 'block';
+  errormsg.innerHTML = msg;
+}
 
+function handelspinner(status = false) {
+  if (status) {
+    donut.innerHTML = `<div class="donut"></div>`;
+  } else {
+    donut.innerHTML = '';
+  }
+}
 function gettingData() {
+  handelspinner(true);
   return fetch('https://api.spaceflightnewsapi.net/v3/articles?_limit=30')
     .then((response) => {
-      console.log(response);
+      //   console.log(response);
       if (!response.ok) {
         throw new Error('404 Error content not found ', `${response.status}`);
       }
       return response.json();
     })
     .then((newsdata) => {
-      console.log(newsdata);
+      //   console.log(newsdata);
+      handelspinner(false);
       createUI(newsdata);
     })
     .catch((error) => {
+      handelErrormsg(error);
       console.error(error);
+    })
+    .finally(() => {
+      handelspinner();
     });
 }
 
-gettingData();
+if (navigator.onLine) {
+  gettingData();
+} else {
+  handelErrormsg('check your internet connection');
+}
 
 function createUI(newsdata) {
   console.log(userInput);
