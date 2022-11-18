@@ -22,14 +22,20 @@ function createTodoUI(data) {
     input.id = todo._id;
     input.type = 'checkbox';
     input.checked = todo.isCompleted;
-    input.addEventListener('change', handelChange);
+    input.addEventListener('change', () =>
+      handelChange(todo._id, todo.isCompleted)
+    );
     let label = document.createElement('label');
     label.for = index;
     label.innerText = todo.title;
+    label.addEventListener('dblclick', (event) =>
+      handeledit(event, todo._id, todo.title)
+    );
+
     let span = document.createElement('span');
     span.innerText = '-';
     span.setAttribute('data-id', todo._id);
-    span.addEventListener('click', handelDelete);
+    span.addEventListener('click', () => handelDelete(todo._id));
     li.append(input, label, span);
     rootList.append(li);
   });
@@ -74,31 +80,68 @@ function addToDo(todo, isDone) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
-}
-
-function deleteTodo(id) {
-  fetch('https://basic-todo-api.vercel.app/api/todo/' + id, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  }).then(() => {
+    getData();
   });
 }
 
 function handelDelete(id) {
   console.log(event.target.dataset.id);
-
-  deleteTodo(event.target.dataset.id);
-  getData();
+  fetch('https://basic-todo-api.vercel.app/api/todo/' + id, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(() => {
+    getData();
+  });
 }
-function handelChange(event) {
-  // console.log(event);
-  // console.log(event.target);
-  // console.dir(event.target);
-  let id = event.target.id;
-  allTodo[id].isDone = !allTodo[id].isDone;
-  localStorage.setItem('allTodo', JSON.stringify(allTodo));
+function handelChange(id, status) {
+  console.log(event.target);
+  let data = {
+    todo: {
+      isCompleted: !status,
+    },
+  };
+
+  fetch(url + `/${id}`, {
+    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  }).then(() => {
+    getData();
+  });
+}
+
+function handeledit(event, id, title) {
+  let input = document.createElement('input');
+  input.value = title;
+  let p = event.target;
+  let parent = event.target.parentElement;
+  parent.replaceChild(input, p);
+  console.log(input, p, parent);
+
+  input.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13 && event.target.value) {
+      let data = {
+        todo: {
+          title: event.target.value,
+        },
+      };
+
+      fetch(url + `/${id}`, {
+        method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+      }).then(() => {
+        getData();
+      });
+    }
+  });
 }
 
 clear.addEventListener('click', (event) => {
