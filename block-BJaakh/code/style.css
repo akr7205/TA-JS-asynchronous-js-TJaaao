@@ -1,0 +1,114 @@
+/* CSS Reset */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+html {
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  /* background: linear-gradient(to right, #7f53ac 0, #657ced 100%); */
+}
+
+button {
+  padding: 0.5rem;
+}
+
+body {
+  margin-top: 2rem;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgb(0 152 198 / 50%);
+  padding: 1rem 1rem;
+}
+
+.form-control {
+  width: 100%;
+}
+
+button {
+  background-color: #8e44ad;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  background-color: #000;
+}
+input[type='text'] {
+  padding: 0.5rem 1rem;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+.styled-checkbox {
+  margin-right: 1.3rem;
+}
+
+span {
+}
+ul {
+  margin-top: 1rem;
+}
+li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+input {
+}
+label {
+  margin-right: 2.3rem;
+  font-weight: 700;
+}
+span {
+  font-size: 2.5rem;
+  color: #f70808;
+  font-weight: 700;
+  cursor: pointer;
+}
+footer {
+  margin-top: 1.5rem;
+}
+.selected {
+  background-color: #fff !important;
+  color: #000 !important;
+}
